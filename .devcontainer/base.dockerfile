@@ -17,7 +17,8 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposit
 RUN apk update && apk add openssh git hub bash
 
 # copy gitcofig
-COPY ./.devcontainer/.githubconfig ~/
+COPY .devcontainer/.githubconfig/ /root/
+RUN chmod 600 ~/.ssh/id_rsa_github
 
 
 
